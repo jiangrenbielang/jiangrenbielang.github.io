@@ -1,3 +1,74 @@
+.utopia-logo-section {
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(30,128,255,0.1) 0%, rgba(77,208,225,0.1) 100%);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #007fff;
+}
+.utopia-logo-container {
+  position: relative;
+  z-index: 2;
+  animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.utopia-title {
+  font-size: 60px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #1e80ff, #4dd0e1, #1e80ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(30,128,255,0.3);
+  letter-spacing: 5px;
+}
+.utopia-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-top: 15px;
+  font-style: italic;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+.utopia-decorative {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeIn 1s ease 0.6s both;
+}
+.utopia-decorative .star {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #4dd0e1, #1e80ff);
+  border-radius: 50%;
+  animation: twinkle 2s ease-in-out infinite;
+}
+.utopia-decorative .star:nth-child(1) {
+  animation-delay: 0s;
+}
+.utopia-decorative .star:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.utopia-decorative .star:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.utopia-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(77,208,225,0.2), transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 3s ease-in-out infinite;
+  z-index: 1;
+}
 .index {
   display: flex;
   padding-bottom: 15px;
@@ -379,4 +450,240 @@
 .page .extend {
   color: #1e90ff;
   font-weight: bold;
+}
+@-moz-keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-o-keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-o-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+@-webkit-keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+@-o-keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+@-moz-keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+}
+@-webkit-keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+}
+@-o-keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
 }
