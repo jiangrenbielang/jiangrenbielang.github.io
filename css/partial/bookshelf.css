@@ -1,0 +1,147 @@
+.bookshelf {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+}
+.bookshelf-title {
+  color: #007fff;
+  font-size: 18px;
+  position: relative;
+}
+.bookshelf-title::before,
+.bookshelf-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transform: translateY(-50%) scale(0.999);
+  display: inline-block;
+  width: 22%;
+  height: 1px;
+  background-color: #007fff;
+  animation: aWidth 1.2s infinite linear;
+}
+.bookshelf-title::after {
+  bottom: -15px;
+  animation-delay: 0.25s;
+}
+@-moz-keyframes aWidth {
+  0% {
+    width: 22%;
+  }
+  25% {
+    width: 36%;
+  }
+  50% {
+    width: 20%;
+  }
+  75% {
+    width: 30%;
+  }
+  100% {
+    width: 22%;
+  }
+}
+@-webkit-keyframes aWidth {
+  0% {
+    width: 22%;
+  }
+  25% {
+    width: 36%;
+  }
+  50% {
+    width: 20%;
+  }
+  75% {
+    width: 30%;
+  }
+  100% {
+    width: 22%;
+  }
+}
+@-o-keyframes aWidth {
+  0% {
+    width: 22%;
+  }
+  25% {
+    width: 36%;
+  }
+  50% {
+    width: 20%;
+  }
+  75% {
+    width: 30%;
+  }
+  100% {
+    width: 22%;
+  }
+}
+@keyframes aWidth {
+  0% {
+    width: 22%;
+  }
+  25% {
+    width: 36%;
+  }
+  50% {
+    width: 20%;
+  }
+  75% {
+    width: 30%;
+  }
+  100% {
+    width: 22%;
+  }
+}
+.bookshelf-empty {
+  margin-top: 20px;
+  padding: 40px 0;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+.bookshelf-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.bookshelf-item {
+  width: 130px;
+  margin: 0 15px 20px 0;
+}
+.bookshelf-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bookshelf-item .book-cover {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.bookshelf-item .book-info {
+  margin-top: 10px;
+  text-align: center;
+}
+.bookshelf-item .book-title {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.bookshelf-item .book-author {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #999;
+}
+.bookshelf-item:hover .book-cover {
+  transform: translateY(-6px) rotate(-2deg);
+  box-shadow: 5px 8px 14px rgba(0,0,0,0.35);
+}
+.bookshelf-item:hover .book-title {
+  color: #007fff;
+}

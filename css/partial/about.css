@@ -71,3 +71,78 @@
 .about-content {
   padding: 15px 0;
 }
+.about-competition {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+.about-competition--title {
+  position: relative;
+  color: #1e90ff;
+  font-size: 16px;
+}
+.about-competition--title::after {
+  content: '';
+  position: absolute;
+  width: 18%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #87ceeb, #f0f8ff);
+  border-radius: 0 3px 3px 0;
+  z-index: -1;
+}
+.about-competition--empty {
+  margin-top: 15px;
+  color: #bbb;
+  font-size: 13px;
+}
+.about-competition--list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.about-competition--item {
+  display: flex;
+  align-items: center;
+  width: calc(50% - 10px);
+  margin: 0 20px 15px 0;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+.about-competition--item:nth-child(2n) {
+  margin-right: 0;
+}
+.about-competition--photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+.about-competition--info {
+  display: flex;
+  flex-direction: column;
+}
+.about-competition--name {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+.about-competition--meta {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-competition--meta span {
+  margin-right: 10px;
+}
+.about-competition--meta span:last-child {
+  margin-right: 0;
+}
