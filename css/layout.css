@@ -229,6 +229,7 @@
   padding: 15px;
   font-size: 13px;
   font-family: "宋体", SimSun, serif;
+  text-shadow: none !important;
 }
 .main-left--motto > p:last-child {
   margin-top: 5px;
