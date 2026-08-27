@@ -1,0 +1,65 @@
+@import '../var.styl';
+
+.competition-detail {
+  padding: 24px;
+  min-height: 60vh;
+  block-mixin();
+  &--back {
+    display: inline-block;
+    color: #1E90FF;
+    font-size: 16px;
+    margin-bottom: 24px;
+    &:hover {
+      color: #1877d1;
+    }
+  }
+  &--heading {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &--eyebrow {
+    color: #1E90FF;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+  }
+  &--time {
+    color: #999;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  &--certificate {
+    margin: 0 auto;
+    text-align: center;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .12);
+    }
+  }
+  figcaption {
+    color: #999;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+  &--empty {
+    color: #999;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .competition-detail {
+    padding: 16px;
+    h1 {
+      font-size: 20px;
+    }
+  }
+}

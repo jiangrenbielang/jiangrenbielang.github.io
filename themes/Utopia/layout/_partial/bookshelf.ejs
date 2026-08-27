@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="<%- url_for('css/partial/bookshelf.css') %>" />
+
+<%
+  const books = theme.books.map(book => ({
+    cover: book[0],
+    title: book[1],
+    author: book[2],
+    link: book[3],
+  }))
+%>
+
+<div class="bookshelf">
+  <h2 class="bookshelf-title">我的书架</h2>
+  <% if (books.length === 0) { %>
+    <p class="bookshelf-empty">书架上还空着，整理好之后会放在这里~</p>
+  <% } else { %>
+    <ul class="bookshelf-list">
+      <% books.forEach(book => { %>
+        <li class="bookshelf-item">
+          <a href="<%= url_for(book.link) %>" target="_blank" rel="noopener">
+            <img class="book-cover" src="<%= book.cover ? url_for(book.cover) : url_for('imgs/default-cover.webp') %>" alt="<%= book.title %>" />
+            <div class="book-info">
+              <p class="book-title"><%= book.title %></p>
+              <p class="book-author"><%= book.author %></p>
+            </div>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</div>

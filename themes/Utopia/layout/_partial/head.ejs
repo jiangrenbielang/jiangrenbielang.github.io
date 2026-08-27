@@ -1,0 +1,24 @@
+<head>
+  <meta charset="utf-8">
+  <%
+    const baseTitle = config.title
+    const title = page.title ? page.title + ' | ' + baseTitle : baseTitle
+  %>
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="<%- url_for('imgs/Profile.jpg') %>" type="image/jpeg">
+  <link rel="stylesheet" href="<%- url_for('css/public.css') %>" />
+  <link rel="stylesheet" href="<%- url_for('css/layout.css') %>" />
+  <link rel="stylesheet" href="<%- url_for('css/iconfont.css') %>" />
+  <link rel="stylesheet" href="<%- url_for('css/APlayer.min.css') %>" />
+  <script src="<%- url_for('js/APlayer.min.js') %>"></script>
+  <script src="<%- url_for('js/jquery.min.js') %>"></script>
+  <script src="<%- url_for('js/jquery.pjax.min.js') %>"></script>
+
+  <% if (theme.comments.enable) { %>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <% } %>
+  <script>
+    document.title = `<%- title %>`
+  </script>
+</head>

@@ -1,0 +1,164 @@
+@import '../var.styl';
+  
+.about {
+  padding: 15px;
+  block-mixin();
+  &-top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  &-title {
+    position: relative;
+    z-index: 2;
+    h2 {
+      position: relative;
+      z-index: 2;
+      color: #1E90FF;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20%;
+      height: 50%;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(to right, skyblue, aliceblue);
+      border-radius: 0 3px 3px 0;
+      z-index: 0;
+    }
+  }
+  &-info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  &-avatar {
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0 0 5px #999;
+  }
+  &-detail {
+    display: flex;
+    margin-left: 20px;
+    flex-wrap: wrap;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px inset #ccc;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 10px;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      box-shadow: 0 0 5px inset #ccc;
+    }
+    p {
+      margin: 5px 10px;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  &-content {
+    padding: 15px 0;
+  }
+  &-competition {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    &--title {
+      position: relative;
+      color: #1E90FF;
+      font-size: 16px;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 18%;
+        height: 50%;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(to right, skyblue, aliceblue);
+        border-radius: 0 3px 3px 0;
+        z-index: -1;
+      }
+    }
+    &--empty {
+      margin-top: 15px;
+      color: #bbb;
+      font-size: 13px;
+    }
+    &--list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    &--item {
+      display: flex;
+      align-items: center;
+      width: calc(50% - 10px);
+      margin: 0 20px 15px 0;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #ccc;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+    &--photo {
+      width: 64px;
+      height: 64px;
+      border-radius: 5px;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 1px solid #eee;
+      flex-shrink: 0;
+    }
+    &--photo-link {
+      display: block;
+      flex-shrink: 0;
+      margin-right: 10px;
+      &:hover .about-competition--photo {
+        border-color: #1E90FF;
+        box-shadow: 0 0 0 2px rgba(30, 144, 255, .15);
+      }
+      .about-competition--photo {
+        margin-right: 0;
+        transition: border-color .2s ease, box-shadow .2s ease;
+      }
+    }
+    &--info {
+      display: flex;
+      flex-direction: column;
+    }
+    &--name {
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+      &:hover {
+        color: #1E90FF;
+      }
+    }
+    &--meta {
+      margin-top: 5px;
+      font-size: 15px;
+      color: #999;
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

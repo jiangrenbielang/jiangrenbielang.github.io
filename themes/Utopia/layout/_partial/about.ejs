@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="<%- url_for('css/partial/about.css') %>" />
+
+<div class="about">
+  <div class="about-top">
+    <div class="about-title">
+      <h2>关于我</h2>
+    </div>
+    <div class="about-info">
+      <img class="about-avatar" src="<%- url_for('/imgs/Profile.jpg') %>" alt="">
+      <div class="about-detail">
+        <% theme.likes.forEach(item => { %>
+          <p><%- item %></p>
+        <% })%>
+      </div>
+    </div>
+  </div>
+  <div class="about-content">
+    <%- page.content %>
+  </div>
+  <%
+    const competitions = theme.competitions.map(c => ({
+      name: c[0],
+      time: c[1],
+      photo: c[2],
+      desc: c[3],
+    }))
+  %>
+  <div class="about-competition">
+    <h2 class="about-competition--title">竞赛经历</h2>
+    <% if (competitions.length === 0) { %>
+      <p class="about-competition--empty">暂无竞赛经历</p>
+    <% } else { %>
+      <ul class="about-competition--list">
+        <% competitions.forEach(c => { %>
+          <li class="about-competition--item">
+            <% if (c.photo) { %>
+              <a class="about-competition--photo-link" href="<%= url_for('/competition/') %>" aria-label="查看<%= c.name %>奖状">
+                <img class="about-competition--photo" src="<%= url_for(c.photo) %>" alt="<%= c.name %>奖状" />
+              </a>
+            <% } %>
+            <div class="about-competition--info">
+              <a class="about-competition--name" href="<%= url_for('/competition/') %>"><%= c.name %></a>
+              <p class="about-competition--meta">
+                <% if (c.time) { %><span><%= c.time %></span><% } %>
+                <% if (c.desc) { %><span><%= c.desc %></span><% } %>
+              </p>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+</div>

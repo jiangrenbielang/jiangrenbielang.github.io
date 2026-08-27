@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="<%- url_for('css/partial/competition.css') %>" />
+
+<%
+  const competition = theme.competitions[0]
+  const name = competition ? competition[0] : ''
+  const time = competition ? competition[1] : ''
+  const photo = competition ? competition[2] : ''
+  const desc = competition ? competition[3] : ''
+%>
+<div class="competition-detail">
+  <a class="competition-detail--back" href="<%- url_for('/about/') %>">返回关于页面</a>
+  <% if (competition && photo) { %>
+    <div class="competition-detail--heading">
+      <p class="competition-detail--eyebrow"><%= desc %></p>
+      <h1><%= name %></h1>
+      <% if (time) { %><p class="competition-detail--time"><%= time %></p><% } %>
+    </div>
+    <figure class="competition-detail--certificate">
+      <img src="<%= url_for(photo) %>" alt="<%= name %>奖状" />
+      <figcaption><%= name %> · <%= desc %></figcaption>
+    </figure>
+  <% } else { %>
+    <p class="competition-detail--empty">暂无奖状</p>
+  <% } %>
+</div>

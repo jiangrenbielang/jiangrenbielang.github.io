@@ -1,0 +1,90 @@
+title: 乌托邦
+# 左侧栏名字
+author_name: Большевик.
+
+# 左侧栏标签，只能两个
+tag1: 文青
+tag2: 技术宅
+
+# 左侧栏Github连接
+github_url: https://github.com/jiangrenbielang
+
+# 左侧栏座右铭（一句话；如需两行可用 motto_last）
+motto_prev: “人最宝贵的是生命，生命对于每个人只有一次……当他回首往事时，不因虚度年华而悔恨，也不因碌碌无为而羞耻。”
+
+
+# 小站部署日期（运营时间）
+public_date: 2026-08-27
+
+# 左侧栏菜单
+menu:
+  - [小站首页, '/', 'icon-shouye']
+  - [个人日志, '/log', 'icon-rizhi']
+  - [友情链接, '/link', 'icon-youqinglianjie']
+  - ['关于自己', '/about', 'icon-guanyuwomen']
+  - ['我的工具', '/tools', 'icon-gongju']
+  - ['我的书架', '/bookshelf', 'icon-shelf']
+
+# 友情连接：头像、名字、链接
+links:
+ - ['https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg', 'Hexo.', 'https://hexo.io/zh-cn/']
+
+# 右侧栏公告
+notice: 欢迎来到江忍别浪的乌托邦，愿你有诗有梦，也有坦荡荡的远方~
+
+# 右侧音乐列表：歌名、作者、链接、封面
+musics:
+  - ['天空之城', '李志', '/music/天空之城.mp3', '/imgs/OIP.webp']
+  - ['年年', '宋冬野', '/music/年年.mp3', '/imgs/OIP.webp']
+
+# 个人介绍
+likes:
+  - 姓名：田道鹏
+  - 年龄：20
+  - 性别：♂
+  - 家乡：安徽省六安市犄角旮旯
+  - 现居住地：辽宁省沈阳市沈河区
+  - 职业：学生
+  - 喜欢：打游戏，看技术贴
+
+# 工具配置：封面，标题，介绍，链接
+tools: []
+
+# 书架配置：封面、书名、作者、链接
+# 示例：
+#  - ['https://example.com/cover.jpg', '活着', '余华', 'https://book.douban.com/subject/4913064/']
+books:
+  - ['/imgs/xunyang.webp', '寻羊冒险记', '村上春树', 'https://www.kepub.net/book/31093/10001']
+  - ['/imgs/wuwuwu.webp', '舞！舞！舞！', '村上春树', 'https://www.kepub.net/book/31091/10001']
+
+# 竞赛经历：奖项名称、获奖时间、奖项照片（可留空）、说明（可留空）
+# 示例：
+#  - ['全国大学生数学建模竞赛 一等奖', '2025-09', '/imgs/award.jpg', '国家级']
+competitions:
+  - ['区域赛一等奖', '2026-06', '/imgs/mathorcup.png', 'Mathorcup数学建模']
+
+# 右侧栏网站信息
+copyright:
+
+
+# 是否开启文章评论 Valine:https://valine.js.org/configuration.htm
+# 注意：appId/appKey 是原作者的 LeanCloud 账号，已置空。如需启用评论，
+# 请到 https://leancloud.cn 注册并创建应用，填入自己的 appId/appKey
+comments:
+  enable: false
+  appId: ''
+  appKey: ''
+  placeholder: '请留下你宝贵的意见吧~'
+  meta: ['nick']
+  recordIP: true
+  visitor: true
+  enableQQ: true
+
+# 纪念模式 none: 不设置 all：全部置灰 index: 首页置灰
+gray: none
+
+# 日志篇幅超过1000字后隐藏（最大高度为1000px),1000可为任意数值
+log_text_num: 1000
+
+# 版本号
+version: 0.0.1
