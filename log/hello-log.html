@@ -200,7 +200,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Hello World","path":"2026/08/27/hello-world/"}]`)
+  const posts = JSON.parse(`[{"title":"Hello World","cover":"/imgs/default-cover.webp","path":"2026/08/27/hello-world/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
