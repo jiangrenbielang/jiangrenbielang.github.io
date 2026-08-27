@@ -228,7 +228,7 @@
 .main-left--motto {
   padding: 15px;
   font-size: 13px;
-  text-shadow: 0 5px 2px #666;
+  font-family: "宋体", SimSun, serif;
 }
 .main-left--motto > p:last-child {
   margin-top: 5px;
