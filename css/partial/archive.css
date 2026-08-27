@@ -46,12 +46,12 @@
 }
 .archive-list__post > div > a {
   color: #333;
-  font-size: 14px;
+  font-size: 17px;
 }
 .archive-list__post > div > a:hover {
   text-decoration: underline;
 }
 .archive-list__post > div > span {
   color: #808080;
-  font-size: 14px;
+  font-size: 17px;
 }

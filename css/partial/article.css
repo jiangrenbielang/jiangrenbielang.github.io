@@ -3,7 +3,7 @@
   word-break: break-word;
   line-height: 1.75;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 18px;
   overflow-x: hidden;
   color: #2b2b2b;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
@@ -167,10 +167,10 @@
   }
 }
 .markdown-body h4 {
-  font-size: 16px;
+  font-size: 19px;
 }
 .markdown-body h5 {
-  font-size: 15px;
+  font-size: 18px;
 }
 .markdown-body h6 {
   margin-top: 5px;
@@ -179,7 +179,7 @@
   line-height: inherit;
   margin: 22px 0;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 17px;
   word-spacing: 2px;
 }
 .markdown-body img {
@@ -192,7 +192,7 @@
 }
 .markdown-body figcaption {
   display: block;
-  font-size: 13px;
+  font-size: 16px;
   color: #2b2b2b;
 }
 .markdown-body figcaption:before {
@@ -247,7 +247,7 @@
   background-size: 40px;
 }
 .markdown-body pre > code {
-  font-size: 12px;
+  font-size: 15px;
   padding: 15px 12px;
   margin: 0;
   word-break: normal;
@@ -282,7 +282,7 @@
 }
 .markdown-body table {
   display: inline-block !important;
-  font-size: 12px;
+  font-size: 15px;
   width: 100%;
   max-width: 100%;
   overflow: auto;
@@ -435,14 +435,14 @@
   margin-top: 10px;
 }
 .article-catelogue .catelogue-1 .toc-link {
-  font-size: 14px;
+  font-size: 17px;
   text-decoration: underline;
 }
 .article-catelogue .catelogue-1 .toc-child {
   margin-left: 10px;
 }
 .article-catelogue .catelogue-2 {
-  font-size: 14px;
+  font-size: 17px;
 }
 .article-catelogue .catelogue-2 p {
   display: flex;
@@ -468,7 +468,7 @@
 }
 .article-info--item {
   display: flex;
-  font-size: 14px;
+  font-size: 17px;
   color: #666;
   margin-top: 10px;
 }
@@ -498,7 +498,7 @@
 .article-info .tag-link {
   color: #fff;
   margin-right: 10px;
-  font-size: 13px;
+  font-size: 16px;
   padding: 3px 7px;
   border-radius: 5px;
   background-color: #1e80ff;

@@ -68,7 +68,7 @@
 }
 .index-right-wrapper .tags li a {
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   padding: 3px 7px;
   border-radius: 5px;
   background-color: #ff6347;
@@ -93,7 +93,7 @@
 .index-right-wrapper .archive-list > li > span,
 .index-right-wrapper .archive-list > li > a {
   color: #333;
-  font-size: 13px;
+  font-size: 16px;
   transition: all 0.3s;
 }
 .index-right-wrapper .backtop {
@@ -135,7 +135,7 @@
 }
 .index-right-wrapper .backtop span {
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 16px;
   z-index: 2;
   transition: all 0.3s;
 }

@@ -128,14 +128,14 @@
   text-align: center;
 }
 .bookshelf-item .book-title {
-  font-size: 14px;
+  font-size: 17px;
   color: #333;
   font-weight: bold;
   transition: color 0.3s;
 }
 .bookshelf-item .book-author {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 15px;
   color: #999;
 }
 .bookshelf-item:hover .book-cover {

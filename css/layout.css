@@ -80,7 +80,7 @@
 .header-search--layer .title {
   width: 100%;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 17px;
   color: #999;
   padding: 0 10px 10px 5px;
   display: flex;
@@ -92,7 +92,7 @@
   cursor: pointer;
 }
 .header-search--layer .empty {
-  font-size: 14px;
+  font-size: 17px;
   color: #999;
   padding: 15px 0;
   text-align: center;
@@ -134,7 +134,7 @@
 }
 .header-menu > li > a {
   color: #fff;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: bold;
   display: flex;
 }
@@ -215,7 +215,7 @@
 }
 .main-left--tag {
   color: #fff;
-  font-size: 13px;
+  font-size: 16px;
   padding: 2px 7px;
   border-radius: 5px;
 }
@@ -227,7 +227,7 @@
 }
 .main-left--motto {
   padding: 15px;
-  font-size: 13px;
+  font-size: 16px;
   font-family: "宋体", SimSun, serif;
   text-shadow: none !important;
 }
@@ -259,14 +259,14 @@
   padding: 10px;
 }
 .main-left--title {
-  font-size: 14px;
+  font-size: 17px;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
 }
 .main-left--subtitle {
   color: #666;
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
@@ -288,7 +288,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  font-size: 13px;
+  font-size: 16px;
   color: #fff;
 }
 .main-left--statics > a:nth-child(1) {
@@ -314,7 +314,7 @@
   width: 100%;
   color: #333;
   padding: 8px 0;
-  font-size: 14px;
+  font-size: 17px;
   display: flex;
   justify-content: space-between;
 }
@@ -379,7 +379,7 @@
 }
 .main-right--content {
   padding: 10px;
-  font-size: 13px;
+  font-size: 16px;
 }
 .main-right--music {
   width: 100%;
@@ -390,7 +390,7 @@
 .main-right--site {
   padding: 15px;
   margin-top: 15px;
-  font-size: 13px;
+  font-size: 16px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #333;
@@ -405,7 +405,7 @@
 }
 .main-right--refer {
   color: #999;
-  font-size: 12px;
+  font-size: 15px;
 }
 .footer {
   width: 1200px;
