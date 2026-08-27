@@ -5,8 +5,8 @@
   background: linear-gradient(135deg, rgba(30,128,255,0.15) 0%, rgba(77,208,225,0.15) 100%);
   position: relative;
   overflow: hidden;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-top: auto;
+  margin-bottom: 15px;
   border-radius: 5px;
   border-bottom: 2px solid #007fff;
 }

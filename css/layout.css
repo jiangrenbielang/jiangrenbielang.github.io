@@ -166,11 +166,13 @@
   margin: 0 auto;
   padding-top: 15px;
   display: flex;
+  min-height: calc(100vh - 100px);
 }
 .main-container {
   width: calc(100% - 200px - 250px);
   padding: 0 15px;
-  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
   transition: width 0.3s;
 }
 .main-container.is-article {
