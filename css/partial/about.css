@@ -124,6 +124,19 @@
   border: 1px solid #eee;
   flex-shrink: 0;
 }
+.about-competition--photo-link {
+  display: block;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.about-competition--photo-link:hover .about-competition--photo {
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 2px rgba(30,144,255,0.15);
+}
+.about-competition--photo-link .about-competition--photo {
+  margin-right: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
 .about-competition--info {
   display: flex;
   flex-direction: column;
@@ -132,6 +145,9 @@
   font-size: 14px;
   color: #333;
   font-weight: bold;
+}
+.about-competition--name:hover {
+  color: #1e90ff;
 }
 .about-competition--meta {
   margin-top: 5px;
