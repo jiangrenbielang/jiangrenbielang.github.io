@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="<%- url_for('css/partial/bookshelf.css') %>" />
 
 <%
-  const books = theme.books.map(book => ({
-    cover: book[0],
-    title: book[1],
-    author: book[2],
-    link: book[3],
+  const books = site.data.books.map(book => ({
+    cover: book.cover,
+    title: book.title,
+    author: book.author,
+    link: book.link,
   }))
 %>
 

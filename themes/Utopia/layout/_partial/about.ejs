@@ -6,9 +6,9 @@
       <h2>关于我</h2>
     </div>
     <div class="about-info">
-      <img class="about-avatar" src="<%- url_for('/imgs/Profile.jpg') %>" alt="">
+      <img class="about-avatar" src="<%- url_for(site.data.site.avatar) %>" alt="">
       <div class="about-detail">
-        <% theme.likes.forEach(item => { %>
+        <% site.data.likes.forEach(item => { %>
           <p><%- item %></p>
         <% })%>
       </div>
@@ -18,11 +18,11 @@
     <%- page.content %>
   </div>
   <%
-    const competitions = theme.competitions.map(c => ({
-      name: c[0],
-      time: c[1],
-      photo: c[2],
-      desc: c[3],
+    const competitions = site.data.competitions.map(c => ({
+      name: c.name,
+      time: c.time,
+      photo: c.photo,
+      desc: c.desc,
     }))
   %>
   <div class="about-competition">

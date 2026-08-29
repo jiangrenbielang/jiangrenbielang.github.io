@@ -26,39 +26,39 @@
     activityText = Math.floor(activity / 365) + '年前'
   }
 
-  const menu = theme.menu.map(m => ({
+  const menu = site.data.menu.map(m => ({
     title: m[0],
     path: m[1],
     icon: m[2],
   }))
 
   const currDate = Date.now()
-  const publicDate = new Date(theme.public_date).getTime()
+  const publicDate = new Date(site.data.site.public_date).getTime()
   const runningDate = Math.ceil((currDate - publicDate) / 1000 / 60 / 60 / 24)
 %>
 <div class="main-left">
   <div class="main-left--block">
     <div class="main-left--info">
-      <img src="<%- url_for('imgs/Profile.jpg') %>" class="main-left--avatar" />
+      <img src="<%- url_for(site.data.site.avatar) %>" class="main-left--avatar" />
       <div class="main-left--intro">
-        <p class="main-left--name"><%- theme.author_name %></p>
+        <p class="main-left--name"><%- site.data.site.author_name %></p>
         <div class="main-left--tags">
-          <span class="main-left--tag"><%- theme.tag1 %></span>
-          <span class="main-left--tag"><%- theme.tag2 %></span>
+          <span class="main-left--tag"><%- site.data.site.tag1 %></span>
+          <span class="main-left--tag"><%- site.data.site.tag2 %></span>
         </div>
       </div>
     </div>
   
     <div>
       <div class="main-left--motto">
-        <p><%- theme.motto_prev %></p>
-        <% if (theme.motto_last) { %>
-        <p><%- theme.motto_last %></p>
+        <p><%- site.data.site.motto_prev %></p>
+        <% if (site.data.site.motto_last) { %>
+        <p><%- site.data.site.motto_last %></p>
         <% } %>
       </div>
       <div class="main-left--github">
         <span class="line"></span>
-        <a href="<%- theme.github_url %>"><i class="logo iconfont icon-github-fill"></i></a>
+        <a href="<%- site.data.site.github_url %>"><i class="logo iconfont icon-github-fill"></i></a>
         <span class="line"></span>
       </div>
       <div class="main-left--statics">
@@ -117,7 +117,7 @@
       </p>
       <p class="main-left--subtitle">
         <span>当前版本：</span>
-        <span>v<%- theme.version %></span>
+        <span>v<%- site.data.site.version %></span>
       </p>
     </div>
   </div>

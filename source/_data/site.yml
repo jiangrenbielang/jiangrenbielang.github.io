@@ -1,0 +1,30 @@
+# 站点身份 / 布局外层信息（被主题模板读取）
+# 修改后需要 `hexo clean && hexo generate` 重新生成
+
+title: 乌托邦
+author_name: Большевик.
+tag1: 文青
+tag2: 技术宅
+github_url: https://github.com/jiangrenbielang
+motto_prev: "“人最宝贵的是生命，生命对于每个人只有一次……当他回首往事时，不因虚度年华而悔恨，也不因碌碌无为而羞耻。”"
+motto_last: ''
+public_date: '2026-08-27'
+notice: 欢迎来到江忍别浪的乌托邦，愿你有诗有梦，也有坦荡荡的远方~
+copyright: ''
+version: 0.0.1
+
+# 资源路径
+avatar: /imgs/Profile.jpg
+favicon: /imgs/Profile.jpg
+default_cover: /imgs/default-cover.webp
+
+# 主题署名
+theme_credit:
+  name: Utopia.
+  url: https://github.com/Aizener/hexo-theme-cola
+
+# 首页底部 Logo 板块（要关闭就把 enabled 设为 false）
+home_logo:
+  enabled: true
+  title: 乌托邦
+  subtitle: 江忍别浪的理想乡

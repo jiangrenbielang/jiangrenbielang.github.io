@@ -73,10 +73,10 @@
   </div>
 </div>
 
-<% if (theme.comments.enable) { %>
+<% if (theme.comments.enable && site.data.comments && site.data.comments.appId) { %>
 <script>
   // var定义，避免pjax重新进来造成的重复声明错误
-  var config = JSON.parse('<%- JSON.stringify(theme.comments) %>')
+  var config = JSON.parse('<%- JSON.stringify(site.data.comments) %>')
   new Valine({
     el: '#vcomments',
     appId: config.appId,

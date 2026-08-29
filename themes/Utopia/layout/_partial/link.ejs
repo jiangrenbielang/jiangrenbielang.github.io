@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<%- url_for('css/partial/link.css') %>" />
 
 <ul class="link">
-  <% theme.links.forEach(link => { %>
+  <% site.data.links.forEach(link => { %>
     <li class="link-item">
       <img src="<%- link[0] %>" alt="">
       <div class="link-info">

@@ -1,0 +1,10 @@
+# 评论（Valine）配置
+# 注意：themes/Utopia/_config.yml 的 comments.enable 仍为功能总开关，需同时打开才生效
+enable: false
+appId: ''
+appKey: ''
+placeholder: 请留下你宝贵的意见吧~
+meta: ['nick']
+recordIP: true
+visitor: true
+enableQQ: true

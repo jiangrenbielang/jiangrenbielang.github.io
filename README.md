@@ -1,14 +1,10 @@
 # Utopia 博客
-
-基于 Hexo 的个人博客。项目根目录是**源码仓库**，主题已定制并命名为 **Utopia**。
-
+基于 Hexo 的个人博客。项目根目录是源码仓库，主题已定制并命名为Utopia。
 ## 分支分工（重要，先看这里）
-
 | 分支 | 内容 | 用途 |
 |------|------|------|
 | **`master`** | 源码（`_config.yml`、`source/`、`themes/Utopia/`、`scaffolds/` 等） | 改代码 / 备份源码 |
 | **`main`** | 已部署的静态站点（`index.html`、`css/`、`js/` 等构建产物） | GitHub Pages 从这里建站，**只由 `npm run deploy` 自动更新，不要手动改** |
-
 > 线上网址：https://jiangrenbielang.github.io/
 > 源码在 `master`，线上页面在 `main`，两者互不覆盖。
 

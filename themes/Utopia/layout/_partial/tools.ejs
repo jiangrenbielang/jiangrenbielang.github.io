@@ -2,12 +2,12 @@
 
 <%
   const tools = []
-  theme.tools.forEach(tool => {
+  site.data.tools.forEach(tool => {
     tools.push({
-      cover: tool[0],
-      title: tool[1],
-      intro: tool[2],
-      link: tool[3],
+      cover: tool.cover,
+      title: tool.title,
+      intro: tool.intro,
+      link: tool.link,
     })
   })
 %>

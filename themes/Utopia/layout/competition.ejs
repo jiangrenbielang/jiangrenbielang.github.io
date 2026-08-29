@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="<%- url_for('css/partial/competition.css') %>" />
 
 <%
-  const competition = theme.competitions[0]
-  const name = competition ? competition[0] : ''
-  const time = competition ? competition[1] : ''
-  const photo = competition ? competition[2] : ''
-  const desc = competition ? competition[3] : ''
+  const competition = site.data.competitions[0]
+  const name = competition ? competition.name : ''
+  const time = competition ? competition.time : ''
+  const photo = competition ? competition.photo : ''
+  const desc = competition ? competition.desc : ''
 %>
 <div class="competition-detail">
   <a class="competition-detail--back" href="<%- url_for('/about/') %>">返回关于页面</a>

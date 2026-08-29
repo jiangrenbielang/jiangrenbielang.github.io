@@ -104,10 +104,10 @@
 <% } %>
 
 <!-- 乌托邦 Logo Section -->
-<div class="utopia-logo-section">
+<% if (site.data.site.home_logo && site.data.site.home_logo.enabled) { %><div class="utopia-logo-section">
   <div class="utopia-logo-container">
-    <h1 class="utopia-title">乌托邦</h1>
-    <p class="utopia-subtitle">江忍别浪的理想乡</p>
+    <h1 class="utopia-title"><%- site.data.site.home_logo.title %></h1>
+    <p class="utopia-subtitle"><%- site.data.site.home_logo.subtitle %></p>
     <div class="utopia-decorative">
       <span class="star"></span>
       <span class="star"></span>
@@ -115,7 +115,7 @@
     </div>
   </div>
   <div class="utopia-glow"></div>
-</div>
+</div><% } %>
 
 <script>
   var allImgBoxs = document.querySelectorAll('.index-article--box');

@@ -1,0 +1,7 @@
+# 左侧栏菜单：每条 [标题, 路径, iconfont 类名]
+- [小站首页, '/', 'icon-shouye']
+- [个人日志, '/log', 'icon-rizhi']
+- [友情链接, '/link', 'icon-youqinglianjie']
+- ['关于自己', '/about', 'icon-guanyuwomen']
+- ['我的工具', '/tools', 'icon-gongju']
+- ['我的书架', '/bookshelf', 'icon-shelf']

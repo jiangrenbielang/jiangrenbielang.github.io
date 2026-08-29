@@ -5,7 +5,7 @@
       <i class="iconfont icon-gonggao"></i>
     </div>
     <div class="main-right--content">
-      <%- theme.notice %> 
+      <%- site.data.site.notice %> 
     </div>
   </div>
 
@@ -23,7 +23,7 @@
       <i class="iconfont icon-huidaodingbu"></i>
       <span>回到顶部</span>
     </div>
-    <% if (theme.comments.enable) { %>
+    <% if (theme.comments.enable && site.data.comments && site.data.comments.appId) { %>
     <div class="operate-item turn-comment hidden">
       <i class="iconfont icon-pinglun"></i>
       <span>查看评论</span>
@@ -34,13 +34,13 @@
   <div class="main-right--site">
     <div class="main-right--power">
       <p>Power By <a href="https://hexo.io/zh-cn/docs/">Hexo</a>.</p>
-      <p>Theme：<a href="https://github.com/Aizener/hexo-theme-cola">Utopia.</a></p>
+      <p>Theme：<a href="<%- site.data.site.theme_credit.url %>"><%- site.data.site.theme_credit.name %></a></p>
     </div>
-    <p class="main-right--refer"><a href="https://beian.miit.gov.cn/#/Integrated/index"><%- theme.copyright %></a> </p>
+    <p class="main-right--refer"><a href="https://beian.miit.gov.cn/#/Integrated/index"><%- site.data.site.copyright %></a> </p>
   </div>
 </div>
 <%
-  const musics = theme.musics.map(item => ({
+  const musics = site.data.musics.map(item => ({
     name: item[0],
     artist: item[1],
     url: item[2],
