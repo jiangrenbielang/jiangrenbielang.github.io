@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>分类 | 乌托邦</title>
+  <title>番茄钟 | 乌托邦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/Profile.jpg" type="image/jpeg">
   <link rel="stylesheet" href="/css/public.css" />
@@ -17,7 +17,7 @@
 
   
   <script>
-    document.title = `分类 | 乌托邦`
+    document.title = `番茄钟 | 乌托邦`
   </script>
 <meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="乌托邦" type="application/atom+xml">
 </head>
@@ -368,14 +368,97 @@
       <div id="main-container" class="main-container">
 
 
-  <link rel="stylesheet" href="/css/partial/categories.css" />
-
-<div class="categories">
-  <h2 class="categories-title">小站分类</h2>
-  <div class="categories-list">
-    
+  <div id="pomodoro-page">
+  <div class="pomodoro-page-card">
+    <h2>专注工作，高效休息</h2>
+    <div class="pomodoro-page-timer">
+      <div class="pomodoro-progress">
+        <svg width="160" height="160" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#333" stroke-width="8"/>
+          <circle id="pomodoro-circle" cx="80" cy="80" r="70" fill="none" stroke="orange" stroke-width="8"
+                  stroke-linecap="round" stroke-dasharray="439.82" stroke-dashoffset="0"
+                  transform="rotate(-90 80 80)"/>
+        </svg>
+        <div class="pomodoro-time" id="pomodoro-time">25:00</div>
+      </div>
+      <div class="pomodoro-mode" id="pomodoro-mode">专注时间</div>
+    </div>
+    <div class="pomodoro-buttons">
+      <button id="pomodoro-start" class="pomodoro-btn">开始</button>
+      <button id="pomodoro-reset" class="pomodoro-btn">重置</button>
+    </div>
+    <div class="pomodoro-sessions" id="pomodoro-sessions">今日完成：0 个番茄</div>
   </div>
 </div>
+
+<style>
+  #pomodoro-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+  }
+  .pomodoro-page-card {
+    background: rgba(37, 35, 40, 0.9);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    max-width: 400px;
+    width: 100%;
+  }
+  .pomodoro-page-card h2 {
+    color: #ddd;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  .pomodoro-progress {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+  }
+  .pomodoro-time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: orange;
+    letter-spacing: 2px;
+  }
+  .pomodoro-mode {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .pomodoro-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .pomodoro-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #555;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  .pomodoro-btn:hover {
+    background: orange;
+    color: #252328;
+  }
+  .pomodoro-sessions {
+    color: #777;
+    font-size: 14px;
+  }
+</style>
 
 </div>
       <div class="main-right-wrapper"><div class="main-right">
