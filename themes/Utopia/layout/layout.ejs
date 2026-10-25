@@ -177,6 +177,8 @@
 
     window.onload = function () {
       checkAndSetArticlePageLayout()
+      if (window.initPomodoroPage) window.initPomodoroPage()
+      if (window.initCheckinPage) window.initCheckinPage()
       setTimeout(() => {
         $('#load').slideUp()
         $('#container').slideToggle()
@@ -203,6 +205,8 @@
       })
       setGrayStyle()
       checkAndSetArticlePageLayout()
+      if (window.initPomodoroPage) window.initPomodoroPage()
+      if (window.initCheckinPage) window.initCheckinPage()
     })
     $(document).on('pjax:popstate', function() {
       status = -1

@@ -14,6 +14,8 @@
   <%- partial('_partial/tools', { cache: !config.relative_link }) %>
 <% } else if (page.path === 'bookshelf/index.html') { %>
   <%- partial('_partial/bookshelf', { cache: !config.relative_link }) %>
+<% } else if (page.path === 'pomodoro/index.html') { %>
+  <%- page.content %>
 <% } else { %>
   <%- partial('_partial/article.ejs', { post: page, index: false }) %> 
 <% } %>
