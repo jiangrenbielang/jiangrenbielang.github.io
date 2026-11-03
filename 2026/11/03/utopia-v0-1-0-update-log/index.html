@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Utopia v0.1.0 更新日志：从 LibreTV 到 TVBox | 乌托邦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="/imgs/Profile.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="/css/public.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/iconfont.css" />
+  <link rel="stylesheet" href="/css/APlayer.min.css" />
+  <script src="/js/APlayer.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.pjax.min.js"></script>
+  <script src="/js/pomodoro.js"></script>
+  <script src="/js/checkin.js"></script>
+
+  
+  <script>
+    document.title = `Utopia v0.1.0 更新日志：从 LibreTV 到 TVBox | 乌托邦`
+  </script>
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="乌托邦" type="application/atom+xml">
+</head>
+
+<style>
+  .load {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(37, 35, 40);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+  }
+  .load-circle {
+    width: 80px;
+    height: 80px;
+    border: 8px solid orange;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 1s linear infinite;
+    filter: drop-shadow(0 0 3px orange);
+  }
+  .load-circle-inner {
+    width: 40px;
+    height: 40px;
+    border: 8px solid orange;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: rotate-reverse .5s linear infinite;
+  }
+  .load-text {
+    margin-top: 20px;
+    font-size: 24px;
+    color: orange;
+    display: flex;
+  }
+  .load-text span {
+    margin: 0 5px;
+    text-shadow: 5px 5px 5px orange;
+    animation: move 1s linear infinite;
+  }
+  .load-text span:nth-child(1) {
+    animation-delay: -0.6s;
+  }
+  .load-text span:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  .load-text span:nth-child(3) {
+    animation-delay: -0.4s;
+  }
+  .load-text span:nth-child(4) {
+    animation-delay: -0.3s;
+  }
+  .load-text span:nth-child(5) {
+    animation-delay: -0.2s;
+  }
+  .load-text span:nth-child(6) {
+    animation-delay: -0.1s;
+  }
+  @keyframes rotate {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes rotate-reverse {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(-360deg); }
+  }
+  @keyframes move {
+    0% { transform: translateY(0%) rotate(0) scale(1); }
+    20% { transform: translateY(20%) rotate(10deg) scale(1.2); }
+    80% { transform: translateY(-10%) rotate(-20deg) scale(.8);}
+    100% { transform: translateY(0) rotate(0) scale(1); }
+  }
+
+  .progress {
+    position: fixed;
+    left: 0; top: 0;
+    width: 0;
+    height: 3px;
+    background-color: green;
+    transition: all cubic-bezier(0.215, 0.610, 0.355, 1) .1s;
+    z-index: 9999;
+  }
+
+  .to-up {
+    animation: toUp .5s 1;
+  }
+  .gray {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: none;
+    pointer-events: none;
+    background-color: #000;
+    mix-blend-mode: color;
+  }
+  @keyframes toUp {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0) ; opacity: 1; }
+  }
+</style>
+<body>
+  <div id="load" class="load">
+    <div class="load-circle">
+      <div class="load-circle-inner"></div>
+    </div>
+    <p class="load-text">
+      <span>L</span>
+      <span>O</span>
+      <span>A</span>
+      <span>D</span>
+      <span>I</span>
+      <span>N</span>
+      <span>G</span>
+    </p>
+  </div>
+  <div id="container" class="container w-100 vh-100" style="display: none;">
+    <header class="header">
+  <div class="header-wrapper">
+    <div class="header-left">
+      <div class="header-search">
+        <input id="search-input" type="text" class="header-search--input" placeholder="请输入要检索的文章标题" />
+        <span id="search-btn" class="header-search--icon"><i class="iconfont icon-sousuo"></i></span>
+      </div>
+      <div id="search-layer" class="header-search--layer hidden">
+        <p class="title">
+          <span>以下是搜索内容：</span>
+          <span id="close-layer-btn">关闭</span>
+        </p>
+        <ul>
+        </ul>
+      </div>
+    </div>
+    <div class="header-right">
+      <ul class="header-menu">
+        <li>
+          <a href="https://jiangrenbielang.github.io/">
+            <i class="header-menu--icon iconfont icon-shouye"></i>
+            <span class="header-menu--span">首页</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://jiangrenbielang.github.io/log">
+            <i class="header-menu--icon iconfont icon-rizhi"></i>
+            <span class="header-menu--span">日志</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://jiangrenbielang.github.io/bookshelf">
+            <i class="header-menu--icon iconfont icon-shelf"></i>
+            <span class="header-menu--span">书架</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://jiangrenbielang.github.io/pomodoro/">
+            <i class="header-menu--icon iconfont icon-gongju"></i>
+            <span class="header-menu--span">番茄钟</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://jiangrenbielang.github.io/link">
+            <i class="header-menu--icon iconfont icon-youqinglianjie"></i>
+            <span class="header-menu--span">友情链接</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://jiangrenbielang.github.io/about">
+            <i class="header-menu--icon iconfont icon-guanyuwomen"></i>
+            <span class="header-menu--span">关于我</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const ipt = document.querySelector('#search-input')
+  const btn = document.querySelector('#search-btn')
+  const layer = document.querySelector('#search-layer')
+  const posts = JSON.parse(`[{"title":"Hello World","cover":"/imgs/default-cover.webp","path":"2026/08/27/hello-world/"},{"title":"关于乌托邦考研平台","cover":"/imgs/default-cover.webp","path":"2026/10/25/utopia-kaoyan-platform/"},{"title":"论姆巴佩之流的错误论调","cover":"/imgs/lun-mbapei.webp","path":"2026/10/27/lun-mbapei-zhi-liu/"},{"title":"Utopia v0.1.0 更新日志：从 LibreTV 到 TVBox","cover":"/imgs/default-cover.webp","path":"2026/11/03/utopia-v0-1-0-update-log/"}]`)
+  ipt.addEventListener('keyup', e => {
+    if (e.key === 'Enter') {
+      handleSearch()
+    }
+  })
+  btn.addEventListener('click', () => {
+    handleSearch()
+  })
+
+  document.querySelector('#close-layer-btn').addEventListener('click', () => {
+    layer.classList.toggle('hidden')
+  })
+
+  function handleSearch() {
+    if (ipt.value.trim() === '') {
+      return
+    }
+    let html = ''
+    const targetPosts = posts.filter(post => post.title.includes(ipt.value))
+    targetPosts.forEach(post => {
+      html += `
+        <li>
+          <div>
+            <a href="/${post.path}">${post.title.replace(new RegExp(ipt.value), `<span>${ipt.value}</span>`)}</a>
+          </div>
+          <img src="${post.cover || '/imgs/default-cover.webp' }" />
+        </li>
+      `
+    })
+    if (html.trim () === '') {
+      html += '<p class="empty">没有搜索到内容</p>'
+    }
+    layer.querySelector('ul').innerHTML = html
+    layer.classList.remove('hidden')
+  }
+</script> 
+    <section id="main" class="main">
+      <div class="main-left-wrapper">
+<div class="main-left">
+  <div class="main-left--block">
+    <div class="main-left--info">
+      <img src="/imgs/Profile.jpg" class="main-left--avatar" />
+      <div class="main-left--intro">
+        <p class="main-left--name">Большевик.</p>
+        <div class="main-left--tags">
+          <span class="main-left--tag">文青</span>
+          <span class="main-left--tag">技术宅</span>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <div class="main-left--motto">
+        <p>“人最宝贵的是生命，生命对于每个人只有一次……当他回首往事时，不因虚度年华而悔恨，也不因碌碌无为而羞耻。”</p>
+        
+      </div>
+      <div class="main-left--github">
+        <span class="line"></span>
+        <a target="_blank" rel="noopener" href="https://github.com/jiangrenbielang"><i class="logo iconfont icon-github-fill"></i></a>
+        <span class="line"></span>
+      </div>
+      <div class="main-left--statics">
+        <a href="/categories">
+          <div>
+            <span>1</span>
+            <span>分类</span>
+          </div>
+        </a>
+        <a href="/tags">
+          <div>
+            <span>6</span>
+            <span>标签</span>
+          </div>
+        </a>
+        <a href="/archives">
+          <div>
+            <span>3 </span>
+            <span>归档</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-left--block">
+    <ul class="main-left--menu">
+      
+        <li>
+          <a href="/">
+            <span class="header-menu--span">小站首页</span>
+            <i class="header-menu--icon iconfont icon-shouye"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a href="/log">
+            <span class="header-menu--span">个人日志</span>
+            <i class="header-menu--icon iconfont icon-rizhi"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a href="/link">
+            <span class="header-menu--span">友情链接</span>
+            <i class="header-menu--icon iconfont icon-youqinglianjie"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a href="/about">
+            <span class="header-menu--span">关于自己</span>
+            <i class="header-menu--icon iconfont icon-guanyuwomen"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a href="/tools">
+            <span class="header-menu--span">我的工具</span>
+            <i class="header-menu--icon iconfont icon-gongju"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a href="/bookshelf">
+            <span class="header-menu--span">我的书架</span>
+            <i class="header-menu--icon iconfont icon-shelf"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="main-left--block">
+    <div class="main-left--site">
+      <h5 class="main-left--title">
+        <span>站点信息</span>
+        <i class="iconfont icon-zhandian"></i>
+      </h5>
+      <p class="main-left--subtitle">
+        <span>文章数目：</span>
+        <span>4 篇</span>
+      </p>
+      <p class="main-left--subtitle">
+        <span>最近动态：</span>
+        <span>今天</span>
+      </p>
+      <p class="main-left--subtitle">
+        <span>上线时间：</span>
+        <span>69天</span>
+      </p>
+      <p class="main-left--subtitle">
+        <span>当前版本：</span>
+        <span>v0.0.1</span>
+      </p>
+    </div>
+  </div>
+</div></div>
+      <div id="main-container" class="main-container">
+
+
+  <link rel="stylesheet" href="/css/partial/article.css" />
+
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title">Utopia v0.1.0 更新日志：从 LibreTV 到 TVBox</h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          <div class="article-info--categories">
+            <span>分类：</span>
+            <a class="category-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
+          </div>
+          
+          
+          <div class="article-info--tags">
+            <span>标签：</span>
+            <a class="tag-link" href="/tags/Utopia/" rel="tag">Utopia</a><a class="tag-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><a class="tag-link" href="/tags/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" rel="tag">更新日志</a><a class="tag-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a>
+          </div>
+          
+          <p class="article-info--date">日期：2026-11-03 18:30:00</p>
+        </div>
+        <img src="/imgs/default-cover.webp" alt="" class="article-cover">
+      </div>
+    </div>
+    <article class="article-content markdown-body">
+      <p>一个月前，<a href="/2026/10/25/utopia-kaoyan-platform/" title="关于乌托邦考研平台">乌托邦考研平台</a> 在这里诞生；用了一个月，我越来越清楚地感觉到：LibreTV 的形态和我要的不一样。它是为浏览器聚合搜索设计的，而我需要的是一个每天打开、看网课、自动记时长的「学习台」，并且我大部分时间在 Windows 桌面上。于是有了这次大重构。以下是 v0.1.0 的更新日志。</p>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ul>
+<li><strong>TVBox 配置地址数据入口</strong>：填一份接口 JSON，点播站点、解析线路、壁纸全带出来；一条地址完成导入，多仓库配置（<code>urls:[...]</code>）自动跟随。</li>
+<li><strong>分类浏览页</strong>：按站点分类翻页找课。</li>
+<li><strong>播放页解析线路面板</strong>：一条线路不行就换下一条。</li>
+<li><strong>Electron 桌面客户端（Windows x64）</strong>：主进程拉起内建本地数据层（静态导出页面 + 编译好的服务核），监听 <code>127.0.0.1:3210</code>，不再有 Next.js 长驻服务；去掉应用菜单栏，<code>Ctrl+,</code> 打开设置、<code>F11</code> 全屏、<code>Ctrl+=/-/0</code> 缩放；渲染层日志转发到 <code>desktop.log</code>，错误页能展开技术细节，出问题不再靠猜。</li>
+<li><strong>壁纸系统</strong>：三种来源可切换——跟随 TVBox 配置自带的壁纸、导入本地图片（存 IndexedDB，单张上限 12MB）、或关闭；压暗程度和填充方式（铺满裁切 &#x2F; 完整留边）都可调。</li>
+<li><strong>玻璃化界面</strong>：有壁纸时，卡片、输入框、顶栏变成半透明 + <code>backdrop-filter</code> 毛玻璃，壁纸透出来但文字始终落在稳定的颜色上。</li>
+</ul>
+<h2 id="重构与变更"><a href="#重构与变更" class="headerlink" title="重构与变更"></a>重构与变更</h2><ul>
+<li><strong>服务端抽成宿主无关的服务核</strong>（<code>src/server/</code>）：同一份逻辑，部署到 Web 时是 Next.js 的 Route Handler（<code>src/app/api/**</code> 只是薄壳），跑在桌面时是 Electron 主进程内建的 Node <code>http.Server</code>。改一处，两端同步生效，不会再出现「网页上好了、桌面端还是旧行为」的漂移。</li>
+<li><strong>界面整体换血</strong>：LibreTV 的深蓝黑霓虹风改为 TVBox 风格——中性深色、海报网格、顶部分类 tab。学习计时、倒计时、统计图表、课程库这些乌托邦自己的东西全部保留。</li>
+<li><strong>壁纸模式下整套调色板强制切到深色玻璃 HUD</strong>（白字 + 蓝强调色）：浅色主题下近黑文字压在偏暗照片上会糊成一片，零散改字色是补不完的；不管系统主题、不管壁纸明暗，对比度都稳定。关掉壁纸，界面原样回到实色。</li>
+<li><strong>敏感配置收紧</strong>：网盘令牌、内网放行这类配置只留在主进程&#x2F;服务端，页面拿不到。</li>
+</ul>
+<h2 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h2><ul>
+<li><strong>LibreTV 整套 Web 端配置</strong>：访问密码、<code>.env</code> 环境变量、Docker 配置项。个人工具不需要这些。</li>
+<li><strong>iframe 嵌入播放</strong>：iframe 是跨域页面，播放器读不到播放状态，计时只能按「页面可见时长」近似。现在统一走直链 + 解析线路，m3u8&#x2F;mp4 直接播、按真实播放进度计时、能拖进度条也能记住看到哪，不再维护两套计时口径。</li>
+<li><strong>companion 伴生程序 + mpv 本地高清播放</strong>：用户要装 Python 和 mpv、构建要 PyInstaller 打包、mpv 是独立窗口嵌不进页面、关闭后才同步学习记录——整套删掉。播放全部回到应用内的 ArtPlayer + hls.js，学习体验从「弹个窗口、关了才记时长」变成「就在学习台里看、看着就计时」。</li>
+<li>安装包从 <strong>160.5 MB 减到 116.8 MB</strong>，构建不再需要 Python、mpv、companion 目录——任何人 clone 下来就能构建。</li>
+</ul>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ul>
+<li>播放器曾把<strong>所有</strong>地址硬编码按 m3u8 塞给 hls.js，mp4 直链永远播不出来。现在按地址类型分流 HLS &#x2F; 原生播放。</li>
+<li>代理给整个响应流挂了 8 秒超时，185MB 的网课播到第 8 秒必断、播放器反复重连，表现为「加载极慢」。现在只对等响应头限时。</li>
+</ul>
+<h2 id="说明与已知限制"><a href="#说明与已知限制" class="headerlink" title="说明与已知限制"></a>说明与已知限制</h2><ul>
+<li>依赖 Spider 引擎（jar&#x2F;dex）的站点会被跳过并说明原因——那是 Android 原生生态，Web 客户端跑不了，宁可明确告知也不假装能用。</li>
+<li>乌托邦现在是纯粹的<strong>个人考研学习台</strong>：数据全在本地，无账号，无广告。</li>
+</ul>
+<h2 id="发布信息"><a href="#发布信息" class="headerlink" title="发布信息"></a>发布信息</h2><ul>
+<li><strong>v0.1.0 已发布</strong>：<a target="_blank" rel="noopener" href="https://github.com/jiangrenbielang/utopia/releases">Utopia-Setup-0.1.0.exe</a>（Windows x64，116.8 MB，SHA256 见发布页）</li>
+<li>测试 618 例全部通过，typecheck &#x2F; lint 零错误</li>
+<li>发布前对源码与安装包产物做了个人数据全文扫描：零命中（示例复习计划为通用占位，网盘令牌只在本机）</li>
+<li>仓库：<a target="_blank" rel="noopener" href="https://github.com/jiangrenbielang/utopia">jiangrenbielang&#x2F;utopia</a></li>
+</ul>
+<hr>
+<p><em>播放内核与聚合能力源自 <a target="_blank" rel="noopener" href="https://github.com/LibreSpark/LibreTV">LibreTV</a>（LibreSpark &#x2F; bestZwei 及其全体贡献者），学习计时与统计部分与「研时记」一脉相承。本项目禁止商用，视频源需自行获取，请支持正版。</em></p>
+<p><em>如果你没有能力支持正版，希望你在获取盗版资源的时候不要跳脸那些支持正版的同学；如果你有能力支持正版但觉得本项目更便利，请在支持正版后采用本项目。可优化之处欢迎邮件 <a href="mailto:&#x71;&#x7a;&#x33;&#x35;&#56;&#57;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;">qz3589@qq.com</a>。</em></p>
+<p>愿世界更加美好，这里是乌托邦。愿每个考研人成功上岸。</p>
+
+    </article>
+    
+  </div>
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E"><span class="toc-number">1.</span> <span class="toc-text">新增</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E4%B8%8E%E5%8F%98%E6%9B%B4"><span class="toc-number">2.</span> <span class="toc-text">重构与变更</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4"><span class="toc-number">3.</span> <span class="toc-text">移除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D"><span class="toc-number">4.</span> <span class="toc-text">修复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E%E4%B8%8E%E5%B7%B2%E7%9F%A5%E9%99%90%E5%88%B6"><span class="toc-number">5.</span> <span class="toc-text">说明与已知限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E4%BF%A1%E6%81%AF"><span class="toc-number">6.</span> <span class="toc-text">发布信息</span></a></li></ol>
+      </div>
+      
+        <div class="catelogue catelogue-2">
+           
+          
+            <p>
+              <span>下一篇</span>
+              <a href="/2026/10/27/lun-mbapei-zhi-liu/">论姆巴佩之流的错误论调</a>
+            </p>
+          
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const links = tocs ? tocs.querySelectorAll('a') : []
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = decodeURIComponent(e.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
+</script> 
+
+</div>
+      <div class="main-right-wrapper"><div class="main-right">
+  <div class="main-right--board">
+    <div class="main-right--title">
+      <h5>公告栏</h5>
+      <i class="iconfont icon-gonggao"></i>
+    </div>
+    <div class="main-right--content">
+      欢迎来到江忍别浪的乌托邦，愿你有诗有梦，也有坦荡荡的远方~ 
+    </div>
+  </div>
+
+  <div class="main-right--music-board">
+    <div class="main-right--title">
+      <h5>音乐列表</h5>
+      <i class="iconfont icon-music"></i>
+    </div>
+  </div>
+
+  <div id="aplayer" class="main-right--music"></div>
+
+  <div class="operate-items">
+    <div class="operate-item backtop">
+      <i class="iconfont icon-huidaodingbu"></i>
+      <span>回到顶部</span>
+    </div>
+    
+  </div>
+
+  <div class="main-right--site">
+    <div class="main-right--power">
+      <p>Power By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>.</p>
+      <p>Theme：<a target="_blank" rel="noopener" href="https://github.com/Aizener/hexo-theme-cola">Utopia.</a></p>
+    </div>
+    <p class="main-right--refer"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index"></a> </p>
+  </div>
+</div>
+
+<script>
+  function setOperateItem () {
+    const reg = /\d{4}\/\d{2}\/\d{2}\/.+/
+    const path = location.pathname
+    const operateDom = document.querySelector('.main-right .operate-items')
+    const commentDom = document.querySelector('.turn-comment')
+    const cateloguDom = document.querySelector('.article-catelogue > .article-catelogue--wrapper');
+
+    if (commentDom) {
+      if (reg.test(path) || path.match(/\/log\/.+/)) {
+        commentDom.classList.remove('hidden')
+        const newDom = operateDom.cloneNode(true);
+        const _backtopDom = newDom.querySelector('.backtop');
+        const _commentDom = newDom.querySelector('.turn-comment');
+        _backtopDom.addEventListener('click', () => backTopEvent());
+        _commentDom.addEventListener('click', () => commentDomEvent());
+        cateloguDom.appendChild(newDom);
+      } else {
+        commentDom.classList.add('hidden')
+      }
+    }
+  }
+
+  setOperateItem()
+  const musics = JSON.parse(`[{"name":"天空之城","artist":"李志","url":"/music/天空之城.mp3","cover":"/imgs/the-city-of-sky.webp"},{"name":"年年","artist":"宋冬野","url":"/music/年年.mp3","cover":"/imgs/year-by-year.webp"},{"name":"奇妙能力歌","artist":"陈粒","url":"/music/奇妙能力歌.mp3","cover":"/imgs/extraordinary-power.jpg"}]`)
+  const ap = new APlayer({
+    container: document.querySelector('#aplayer'),
+    audio: musics,
+  })
+
+  $(document).on('pjax:complete', function() {
+    setOperateItem()
+  })
+
+  document.querySelector('.backtop').addEventListener('click', () => {
+    backTopEvent();
+  })
+  const dom = document.querySelector('.turn-comment')
+  dom && dom.addEventListener('click', () => {
+    commentDomEvent();
+  })
+
+  function backTopEvent() {
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  function commentDomEvent() {
+    const commentDom = document.querySelector('.comments-intro')
+    if (!commentDom) return
+    const top = commentDom.offsetTop, height = commentDom.offsetHeight
+    document.documentElement.scrollTo({
+      top: top - 2 * height,
+      behavior: 'smooth'
+    })
+  }
+</script></div>
+    </section>
+  </div>
+  <div id="progress" class="progress"></div>
+  <div id="gray" class="gray"></div>
+
+  <script>
+    function initScroll () {
+      document.addEventListener('scroll', () => {
+        const doc = document.documentElement
+        const scrollTop = doc.scrollTop
+        const pageHeight = doc.offsetHeight
+        const clientHeight = doc.clientHeight
+        const ratio = scrollTop / (pageHeight - clientHeight)
+        const progress = document.querySelector('#progress')
+        const avatarImg = document.querySelector('.main-left--avatar')
+       
+      })
+    }
+
+    const rootPath = "/"
+
+    const checkAndSetArticlePageLayout = () => {
+      const path = location.pathname.replace(rootPath, '');
+      if (
+        /^\/?\d{4}\/\d{2}\/\d{2}\/.*/.test(path) ||
+        /^log\/.+/.test(path)
+      ) {
+        $('.main-container, .main-right, .main-right-wrapper').addClass('is-article')
+      } else {
+        $('.main-container, .main-right, .main-right-wrapper').removeClass('is-article')
+      }
+    }
+
+    const gray = "none"
+    const setGrayStyle = () => {
+      if (gray === 'none') {
+        return
+      } else if (gray === 'index') {
+        location.pathname === '/' ? $('#gray').show() : $('#gray').hide()
+      } else if (gray === 'all') {
+        $('#gray').show()
+      }
+    }
+    setGrayStyle()
+
+
+    window.onload = function () {
+      checkAndSetArticlePageLayout()
+      if (window.initPomodoroPage) window.initPomodoroPage()
+      if (window.initCheckinPage) window.initCheckinPage()
+      setTimeout(() => {
+        $('#load').slideUp()
+        $('#container').slideToggle()
+        setTimeout(() => {
+          initScroll();
+        }, 500)
+      }, 500)
+    }
+    
+    let status = 0
+    // 对所有链接跳转事件绑定pjax容器container
+    $(document).pjax('a[target!=_blank]', '#main-container', {
+      container: '#main-container',
+      fragment: '#main-container',
+      timeout: 8000
+    })
+
+    $(document).on('pjax:start', function() {
+    })
+    $(document).on('pjax:complete', function() {
+      status = 0
+      $('.main-container').addClass('to-up').on('animationend', function() {
+        $(this).removeClass('to-up')
+      })
+      setGrayStyle()
+      checkAndSetArticlePageLayout()
+      if (window.initPomodoroPage) window.initPomodoroPage()
+      if (window.initCheckinPage) window.initCheckinPage()
+    })
+    $(document).on('pjax:popstate', function() {
+      status = -1
+      checkAndSetArticlePageLayout()
+    });
+  </script>
+</body>
+</html>
